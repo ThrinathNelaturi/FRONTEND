@@ -3,48 +3,44 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Fuzzy</title>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-<!--  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-<script type="text/javascript" src="resources/js/angular.min.js"></script>
-<script type="text/javascript" src="resources/js/angular-route.js"></script>
-<script type="text/javascript" src="resources/js/angular-cookies.js"></script>
-<script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
-<script type="text/javascript"
-	src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
-<script type="text/javascript"
-	src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.1/sockjs.min.js"></script>
-<script type="text/javascript"
-	src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 
+	
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-cookies.js"></script>
+<!-- <script src="//code.jquery.com/jquery-3.1.1.min.js"></script> -->
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.1/sockjs.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+
+<script type="text/javascript" src="app.js"></script>
 <script type="text/javascript" src="Blog/blogctrl.js"></script>
-<script type="text/javascript" src="Users/userctrl.js"></script>
 <script type="text/javascript" src="Login/loginctrl.js"></script>
 <script type="text/javascript" src="Login/loginService.js"></script>
-<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="Forum/forumctrl.js"></script>
+<script type="text/javascript" src="Friend/allUsersCtrl.js"></script>
+<script type="text/javascript" src="Friend/myfriendsctrl.js"></script>
+<script type="text/javascript" src="Chat/chatController.js"></script>
+<script type="text/javascript" src="Chat/chatService.js"></script>
+<script type="text/javascript" src="Job/jobctrl.js"></script>
+<script type="text/javascript" src="Forum/commentctrl.js"></script>
+<script type="text/javascript" src="Users/userctrl.js"></script>
 
 <link rel="stylesheet" href="resources/css/Navbar.css">
 <link rel="stylesheet" href="resources/css/register.css">
 <link rel="stylesheet" href="resources/css/login.css">
 <link rel="stylesheet" href="resources/css/user.css">
+<link rel="stylesheet" href="resources/css/search.css">
+<link rel="stylesheet" href="resources/css/comments.css">
 
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	
-
-
-
-<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
   body {
       font: 400 15px/1.8 Lato, sans-serif;
@@ -186,18 +182,11 @@
   textarea {
       resize: none;
   }
-  </style>
-
-	
+</style>
 
 </head>
 
-
 <body data-ng-app="myApp">
-<!-- id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50" -->
-
-
-
 
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
@@ -207,19 +196,19 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#myPage">Fuzzy</a>
+      <a class="navbar-brand" href="#Home">Fuzzy</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
      <ul class="nav navbar-nav">
-      <li><a href="#myPage">HOME</a></li>
+      <li><a href="#Home">HOME</a></li>
         <li><a href="#blog">Blog</a></li>
 		<li><a href="#forum">Forum</a></li>
 		<li><a href="#users">Find Friends</a></li>
 		<li><a href="#chat">Chat</a></li>
 		<li><a href="#jobs">Find Jobs</a></li>
-		<li><a href="#register">SignUp</a></li>
-	  </ul>
-      <ul class="nav navbar-nav navbar-right">
+	 </ul>
+     
+     <ul class="nav navbar-nav navbar-right">
         <!-- <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">MORE
           <span class="caret"></span></a>
@@ -229,60 +218,23 @@
             <li><a href="#">Media</a></li> 
           </ul>
         </li> -->
-        <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
-        <li><a href="#login"
-						data-ng-hide="globals.currentUser.islogged"><i
-						class="glyphicon glyphicon-log-in"></i></a></li>
-      </ul>
-      <!-- <ul class="nav navbar-nav navbar-right">
-					
-	  </ul> -->
+        <!-- <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li> -->
+     <li><a href="#register" data-ng-hide="globals.currentUser.islogged"><i class="glyphicon glyphicon-user"></i></a></li>
+     <li><a href="#login" data-ng-hide="globals.currentUser.islogged"><i class="glyphicon glyphicon-log-in"></i></a></li>
+     <li style="padding-top:15px;" data-ng-show="globals.currentUser.islogged">Welcome:{{globals.currentUser.username}}</li>
+     <li data-ng-show="globals.currentUser.islogged"><a href="#myprofile">My Profile</a></li>
+     <li data-ng-show="globals.currentUser.islogged"><a href=""  data-ng-controller="LoginController" data-ng-click="vm.logout()">logout</a></li>
+    </ul>{{currentuser.id}}
 	  
     </div>
     
   </div>
   
 </nav>
-
+<hr>
+<hr>
 <div data-ng-view></div>
 
-
-
-
-
-
-
-
-	<!-- <div class="container-fluid">
-		<nav class="navbar navbar-inverse" role="navigation">
-			Brand and toggle get grouped for better mobile display
-			<div class="navbar-header">
-
-				<a class="navbar-brand" href="#home"><b>Fuzzy </b>Home</a>
-			</div>
-
-			Collect the nav links, forms, and other content for toggling
-			<div class="collapse navbar-collapse"
-				id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li><a href="#blog">Blog</a></li>
-					<li><a href="#forum">Forum</a></li>
-					<li><a href="#users">Find Friends</a></li>
-					<li><a href="#chat">Chat</a></li>
-					<li><a href="#jobs">Find Jobs</a></li>
-					<li><a href="#register">SignUp</a></li>
-
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#login"
-						data-ng-hide="globals.currentUser.islogged"><i
-							class="glyphicon glyphicon-log-in"></i></a></li>
-				</ul>
-			</div>
-		</nav>
-	</div>
-	<div data-ng-view></div>
- -->
 </body>
 
 </html>

@@ -1,15 +1,19 @@
-var app = angular.module("blogapp", [])
-app.controller('blogcntrl', [ '$scope', '$http', function($scope, $http) {
+var app = angular.module('blogapp', [])
+app.controller('blogctrl', [ '$scope', '$http', function($scope, $http) {
 	var BASE_URL = 'http://localhost:8181/project2B';
 
 	$scope.getAllBlogs = function() {
 		console.log("get all blogs")
 		$http({
 			method : 'GET',
-			url : BASE_URL + '/blog'
+			url : BASE_URL +'/blog'
 		}).success(function(data, status, headers, config) {
-			$scope.blogs = data;
-			// alert(data);
+			$scope.blog = data;
+			angular.forEach($scope.blogs, function(value, key){
+			      //if(value.Password == "thomasTheKing")
+				var user=value.userid
+			         console.log(user);
+			   });
 		}).error(function(data, status, headers, config) {
 			alert("Error");
 		});
@@ -29,20 +33,18 @@ app.controller('blogcntrl', [ '$scope', '$http', function($scope, $http) {
 			url : BASE_URL + '/createblog',
 			data : $scope.blog
 		}).success(function(data, status, headers, config) {
-			$scope.id = '';
-			$scope.title = '';
-			$scope.userid = '';
-			$scope.doc = '';
-			$scope.content = '';
-			$scope.getAllBlogs();
-		}).error(function(data, status, headers, config) {
-			alert("error");
+			/*$scope.id='';
+			$scope.title='';
+			$scope.userid='';
+			$scope.doc='';
+			$scope.content='';
+			$location.url($location.path());*/
 		});
 	};
 	$scope.deleteblog = function(id) {
 		$http({
 			method : 'DELETE',
-			url : BASE_URL + '/deleteblog/' + id
+			url : BASE_URL+'/deleteblog/'+id
 		}).success(function(data, status, headers, config) {
 			$scope.getAllBlogs();
 		})
@@ -51,5 +53,14 @@ app.controller('blogcntrl', [ '$scope', '$http', function($scope, $http) {
 		$scope.id = id;
 		$scope.title = title;
 		$scope.content = content;
+	};
+	$scope.like=function(id){
+		$http({
+			method : 'POST',
+			url : BASE_URL + '/likeblog/'+id,
+		}).success(function(data, status, headers, config) {
+			alert("success")
+		})
 	}
-} ]);
+	
+    }]);

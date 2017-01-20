@@ -1,6 +1,5 @@
-var app= angular.module('userApp', []);
-app.controller('userctrl', [ '$scope', '$http', '$rootScope', '$cookieStore',
-		function($scope, $http, $rootScope, $cookieStore) {
+app.controller('userctrl', [ '$scope', '$http', '$rootScope', '$cookieStore', 
+function($scope, $http, $rootScope, $cookieStore) {
 			var BASE_URL = 'http://localhost:8181/project2B';
 
 			$scope.submit = function() {
@@ -51,13 +50,12 @@ app.controller('userctrl', [ '$scope', '$http', '$rootScope', '$cookieStore',
 
 				$http.post(BASE_URL + '/imageUpload', image, {
 					withCredentials : true,
-					headers : {
-						'Content-Type' : undefined
-					},
+					headers : {'Content-Type' : undefined },
 					transformRequest : angular.identity
 				}).success(function(data, status, headers, config) {
 					alert("success")
-					$scope.reloadPage = function() {
+					$scope.reloadPage = function() 
+					{
 						$window.location.reload();
 					}
 					console.log(image)
@@ -66,14 +64,8 @@ app.controller('userctrl', [ '$scope', '$http', '$rootScope', '$cookieStore',
 				});
 
 			};
-			/*
-			 * $scope.profileimage= function() { $http({ method : 'GET', url :
-			 * BASE_URL+'/profileimage', }).success(function(data, status,
-			 * headers, config) { $scope.img = data.image
-			 * 
-			 * }).error(function(data, status, headers, config) {
-			 * alert("Error"); }); };
-			 */
+			
+			 
 			$(function() {
 				console.log("edit")
 				$('#profile-image1').on('click', function() {

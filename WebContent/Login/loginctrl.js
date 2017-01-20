@@ -14,13 +14,11 @@ function LoginController($location, AuthenticationService, $rootScope) {
 	function login() {
 
 		console.log("login func")
-		AuthenticationService.Login(vm.username, vm.password,
-				function(response) {
+		AuthenticationService.Login(vm.username, vm.password, function(response) {
 					if (response.success) {
 						console.log("setcred")
 
-						AuthenticationService.SetCredentials(vm.username,
-								vm.password);
+						AuthenticationService.SetCredentials(vm.username, vm.password);
 						$location.path('/home');
 						$rootScope.islogged = true;
 
