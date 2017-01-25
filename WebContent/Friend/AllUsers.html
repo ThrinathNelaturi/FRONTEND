@@ -4,10 +4,22 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <script type="text/javascript" src="allUsersCtrl.js"></script>
-<script type="text/javascript" src="../resources/angular.min.js"></script>
+<script type="text/javascript" src="resources/angular.min.js"></script>
+<style>
+.button {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.button:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+</style>
 </head>
 <body data-ng-app="myApp">
 <a href="#myfriends">My Friends</a>
+<br>
 <a href="#newrequests">My Requests</a>
 <div data-ng-controller="alluserctrl">
 <div class="container" style="padding-top:10px">
@@ -48,7 +60,7 @@
                                     </td>
                               <td>{{user.gender}}</td>
                                     <td class="text-center">
-                                        <span class="label label-default">pending</span>
+                                        <span class="label label-default">accepted</span>
                                     </td>
                                     <td>
                                         <a href="#">{{user.mail}}</a>

@@ -1,6 +1,7 @@
-var app = angular.module('myApp', ['ngRoute','ngCookies','blogapp']);
+var app = angular.module("myApp", ["ngRoute","ngCookies","blogapp"]).run(
+		run);
 
-	app.config(function($routeProvider) 
+	app.config(function($routeProvider, $locationProvider) 
 {
 		
 		$routeProvider.when("/home", {
@@ -8,6 +9,26 @@ var app = angular.module('myApp', ['ngRoute','ngCookies','blogapp']);
 			controller : 'LoginController',
 			controllerAs : 'vm'
 		})
+		.when("/blog", {
+			templateUrl : "Blog/blog.html",
+			controller : "blogctrl",
+		
+		})
+		.when("/viewblog", {
+			templateUrl : "Blog/viewblog.html",
+			controller : "blogctrl",
+		
+		})
+		.when("/forum", {
+        templateUrl : "Forum/Forum.html",
+        controller :  'forumctrl'
+   
+        })
+        .when("/viewforum", {
+        templateUrl : "Forum/viewforum.html",
+        controller :  'forumctrl'
+   
+        })
 		.when("/register", {
 			templateUrl : "Users/register.html",
 			controller : "userctrl"
@@ -18,16 +39,6 @@ var app = angular.module('myApp', ['ngRoute','ngCookies','blogapp']);
 			controllerAs : 'vm'
 		
 		})
-		.when("/blog", {
-			templateUrl : "Blog/blog.html",
-			controller : "blogctrl",
-		
-		})
-		.when("/forum", {
-        templateUrl : "Forum/Forum.html",
-        controller :  'forumctrl'
-   
-        })
         .when("/users",{
     	templateUrl: "Friend/AllUsers.html",
     	controller:'alluserctrl'
@@ -56,19 +67,25 @@ var app = angular.module('myApp', ['ngRoute','ngCookies','blogapp']);
         	templateUrl: "Friend/newrequests.html",
         	controller: "myfriendctrl"
         });
-		console.log("route");    });
+		console.log("route"); 
+
+});
+	
 	run.$inject = ['$rootScope', '$location', '$cookieStore', '$http'];
 	function run($rootScope, $location, $cookieStore, $http) {
 	    // keep user logged in after page refresh
 	    $rootScope.globals = $cookieStore.get('globals') || {};
 	    $rootScope.currentuser = $cookieStore.get('currentuser') || {};
 	    if ($rootScope.globals.currentUser) {
-	        $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
+	        $http.defaults.headers.common['Authorization'] = 'Basic ' 
+	        	+ $rootScope.globals.currentUser.authdata; // jshint 
+	        //ignore:line
 	    }
 
 	    $rootScope.$on('$locationChangeStart', function (event, next, current) {
 	        // redirect to login page if not logged in and trying to access a restricted page
-	        var restrictedPage = $.inArray($location.path(), ['/login', '/register','/home','/jobs']) === -1;
+	        var restrictedPage = $.inArray($location.path(), ['/login', 
+	                           '/register','/home','/jobs','/viewblog','/viewforum']) === -1;
 	        var loggedIn = $rootScope.globals.currentUser;
 	        if (restrictedPage && !loggedIn) {
 	            $location.path('/login');

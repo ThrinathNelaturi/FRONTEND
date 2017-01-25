@@ -8,7 +8,7 @@ app.controller('blogctrl', [ '$scope', '$http', function($scope, $http) {
 			method : 'GET',
 			url : BASE_URL +'/blog'
 		}).success(function(data, status, headers, config) {
-			$scope.blog = data;
+			$scope.blogs = data;
 			angular.forEach($scope.blogs, function(value, key){
 			      //if(value.Password == "thomasTheKing")
 				var user=value.userid

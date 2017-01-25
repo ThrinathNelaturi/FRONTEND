@@ -26,13 +26,16 @@ app.controller('forumctrl', [ '$scope', '$http','$location','$rootScope', functi
 			url : BASE_URL + '/createforum',
 			data : $scope.forum
 		}).success(function(data, status, headers, config) {
-			/*$scope.name='';
+			$scope.name='';
 			$scope.topic='';
 			$scope.userid='';
 			$scope.doc='';
-			$scope.description='';*/
+			$scope.description='';
 			
-		});
+		})/*.error(function(data,status,headers,config)
+				{
+			alert("error");
+				});*/
 	};
 	$scope.deleteforum=function(id){
 		

@@ -3,18 +3,19 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Fuzzy</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css"> 
+  
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"> -->
 	
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-cookies.js"></script>
-<!-- <script src="//code.jquery.com/jquery-3.1.1.min.js"></script> -->
+<script type="text/javascript" src="resources/angular.min.js"></script>
+<script type="text/javascript" src="resources/angular-route.js"></script>
+<script type="text/javascript" src="resources/angular-cookies.js"></script>
+<script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
 
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
@@ -196,11 +197,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#Home">Fuzzy</a>
+      <a class="navbar-brand" href="#home">Fuzzy</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
      <ul class="nav navbar-nav">
-      <li><a href="#Home">HOME</a></li>
+        <li><a href="#home">HOME</a></li>
         <li><a href="#blog">Blog</a></li>
 		<li><a href="#forum">Forum</a></li>
 		<li><a href="#users">Find Friends</a></li>
@@ -218,12 +219,16 @@
             <li><a href="#">Media</a></li> 
           </ul>
         </li> -->
-        <!-- <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li> -->
-     <li><a href="#register" data-ng-hide="globals.currentUser.islogged"><i class="glyphicon glyphicon-user"></i></a></li>
-     <li><a href="#login" data-ng-hide="globals.currentUser.islogged"><i class="glyphicon glyphicon-log-in"></i></a></li>
-     <li style="padding-top:15px;" data-ng-show="globals.currentUser.islogged">Welcome:{{globals.currentUser.username}}</li>
+     <li><a href="#register" 
+     data-ng-hide="globals.currentUser.islogged"><i 
+             class="glyphicon glyphicon-user"></i></a></li>
+     <li><a href="#login" 
+     data-ng-hide="globals.currentUser.islogged"><i 
+             class="glyphicon glyphicon-log-in"></i></a></li>
+     <li style="padding-top:15px;" 
+     data-ng-show="globals.currentUser.islogged">Welcome:{{globals.currentUser.username}}</li>
      <li data-ng-show="globals.currentUser.islogged"><a href="#myprofile">My Profile</a></li>
-     <li data-ng-show="globals.currentUser.islogged"><a href=""  data-ng-controller="LoginController" data-ng-click="vm.logout()">logout</a></li>
+     <!-- <li data-ng-show="globals.currentUser.islogged"><a href=""  data-ng-controller="LoginController" data-ng-click="vm.logout()">logout</a></li> -->
     </ul>{{currentuser.id}}
 	  
     </div>

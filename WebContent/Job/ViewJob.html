@@ -3,16 +3,30 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<script type="text/javascript" src="resources/angular.min.js"></script>
 </head>
 <body data-ng-app="myApp">
 <div data-ng-init="getjobs()">
 <div data-ng-repeat="job in jobs">
-{{job.title}}
-{{job.company}}
-{{job.jobdetails}}
-{{job.lastdate | date:'dd/MM/yyyy'}}
-</div>
-</div>
+<div class="container">
+	<div class="row">
+ <div class="span3">
+        	<div class="well">
+        		<h1>Job Title:</h1><h2 class="text-info">{{job.title}}</h2>  
+
+<div class="span3">
+        	
+        		<h3 class="text-info">{{job.company}}</h3></div>
+
+<div class="span3">
+        	
+        		<h3 class="text-info">{{job.jobdetails}}</h3>  </div>
+<div class="span3">
+        
+        		<h3 class="text-info">{{job.jobdetails}}</h3></div>
+        		<button type="button" class="btn btn-primary" onclick="alert('Thanks u r successfully applied for this job')">Apply Job!</button>
+</div></div></div></div></div></div>
+
 
 </body>
 </html>

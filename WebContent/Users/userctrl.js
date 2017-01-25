@@ -48,7 +48,7 @@ function($scope, $http, $rootScope, $cookieStore) {
 				// Take the first selected file
 				image.append("file", files[0]);
 
-				$http.post(BASE_URL + '/imageUpload', image, {
+				$http.post(BASE_URL + '/imageUpload',image, {
 					withCredentials : true,
 					headers : {'Content-Type' : undefined },
 					transformRequest : angular.identity

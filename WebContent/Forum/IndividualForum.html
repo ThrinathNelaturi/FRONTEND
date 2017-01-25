@@ -4,7 +4,7 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <script type="text/javascript" src="forumctrl.js"></script>
-<script type="text/javascript" src="../resources/angular.min.js"></script>
+<script type="text/javascript" src="resources/angular.min.js"></script>
 </head>
 <body data-ng-app="myApp">
 <h1 align="center">Forum</h1>
@@ -13,6 +13,7 @@
 
 <h2>{{iforum.name}}</h2><br>
 <h3>Topic:{{iforum.topic}}</h3><br>
+
 <p>
 <h3>Description:</h3>{{iforum.description}}
 </p>
@@ -48,15 +49,20 @@
                         <p>{{comm.comment}}</p>
                         <ul class="list-unstyled list-inline media-detail pull-left">
                             <li><i class="fa fa-calendar"></i>{{comm.commenttime | date:dd/MM/yyyy}}</li>
-                            <li><i class="fa fa-thumbs-up"></i>13</li>
+                            <!-- <li><i class="fa fa-thumbs-up"></i>13</li> -->
                         </ul>
                         <ul class="list-unstyled list-inline media-detail pull-right">
                             <li class=""><a href="">Like</a></li>
                             <li class=""><a href="">Reply</a></li>
                         </ul>
+                        <ul class="list-unstyled list-inline media-detail pull-right">
+										<li class=""><a href="">Like</a></li>
+										<li class=""><a href="">Reply</a></li>
+					    </ul>
                     </div>
                 </div>
-                </div></div>
+                </div>
+                </div>
                 </div>
                 </div>
                 </section>
