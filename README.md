@@ -1,5 +1,5 @@
-# FRONTEND(FUZZY.Com)
-# FUZZY
+# FRONTEND(.LIVE.Com)
+# .Live
 Collaboration project consisting of basic funtionality like
  - New user registrations
  - Blogs
